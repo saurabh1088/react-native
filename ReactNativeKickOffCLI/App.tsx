@@ -6,11 +6,14 @@
  */
 
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
+import WelcomePoster from './components/WelcomePoster';
 
 function App(): React.JSX.Element {
   return (
-    <Text>Hello React Native!</Text>
+    <SafeAreaView>
+      <WelcomePoster/>
+    </SafeAreaView>
   );
 }
 
