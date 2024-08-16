@@ -12,7 +12,7 @@ import WelcomePoster from './components/WelcomePoster';
 function App(): React.JSX.Element {
   return (
     <SafeAreaView>
-      <WelcomePoster/>
+      <WelcomePoster name='Batman' tagline='Because, I am BATMAN'/>
     </SafeAreaView>
   );
 }
