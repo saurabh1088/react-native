@@ -1,6 +1,6 @@
 import React from "react";
 import type { PropsWithChildren } from "react";
-import { Text, Image } from "react-native";
+import { Text, Image, View } from "react-native";
 import welcomeStyle from "./WelcomeStyle";
 
 type WelcomeProps = PropsWithChildren<{
@@ -14,14 +14,23 @@ TypeScript add type safety on top of JavaScript hence this type declaration is r
 */
 function WelcomePoster(props: WelcomeProps): React.JSX.Element {
     return (
-        <>
-            <Image 
-                style={welcomeStyle.image} 
-                source={{uri: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5'}}
-            />
-            <Text>Welcome {props.name} to learning React Native!!!</Text>
-            <Text>{props.tagline}</Text>
-        </>
+        /*
+        style here is a prop being sent to component View. All of the core components in react native accept a prop named
+        style.
+        */
+        <View style={welcomeStyle.mainContainer}>
+            <View style={welcomeStyle.innerContainer}>
+                <Image 
+                    style={welcomeStyle.image} 
+                    source={{uri: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5'}}
+                />
+                <View>
+                    <Text style={welcomeStyle.title}>Welcome {props.name} to learning React Native!!!</Text>
+                    <Text style={welcomeStyle.subtitle}>{props.tagline}</Text>
+                </View>
+            </View>
+            
+        </View>
     )
 }
 
