@@ -25,7 +25,7 @@ function WelcomePoster(props: WelcomeProps): React.JSX.Element {
                     source={{uri: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5'}}
                 />
                 <View>
-                    <Text style={welcomeStyle.title}>Welcome {props.name} to learning React Native!!!</Text>
+                    <Text style={welcomeStyle.title}>Welcome {props.name}, learn React-Native!!!</Text>
                     <Text style={welcomeStyle.subtitle}>{props.tagline}</Text>
                 </View>
             </View>

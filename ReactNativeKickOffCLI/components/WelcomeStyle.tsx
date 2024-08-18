@@ -3,7 +3,10 @@ import { StyleSheet } from "react-native";
 
 const welcomeStyle = StyleSheet.create({
     mainContainer: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        padding: 16,
+        backgroundColor: '#D7C3F1',
+        borderRadius: 10
     },
     image: {
         width: 100,
@@ -14,11 +17,13 @@ const welcomeStyle = StyleSheet.create({
     },
     title: {
         flex: 1,
-        backgroundColor: 'red'
+        backgroundColor: '#BDE8CA',
+        padding: 8
     },
     subtitle: {
         flex: 1,
-        backgroundColor: 'green'
+        backgroundColor: '#41B3A2',
+        padding: 8
     }
 })
 
