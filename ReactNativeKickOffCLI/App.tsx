@@ -6,13 +6,15 @@
  */
 
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 import WelcomePoster from './components/WelcomePoster';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaView>
-      <WelcomePoster name='Batman' tagline='Because, I am BATMAN'/>
+      <View style={{padding: 16}}>
+        <WelcomePoster name='Batman' tagline='Because, I am BATMAN'/>
+      </View>
     </SafeAreaView>
   );
 }
