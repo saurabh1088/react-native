@@ -22,6 +22,10 @@ function App(): React.JSX.Element {
     Alert.alert("Pressed button two")
   }
 
+  function showAlertForCustomButton() {
+    Alert.alert("Pressed custom button")
+  }
+
   return (
     <SafeAreaView>
       <View style={{padding: 16}}>
@@ -38,7 +42,7 @@ function App(): React.JSX.Element {
             color={'green'}
           />
         </View>
-        <CustomButton/>
+        <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
       </View>
     </SafeAreaView>
   );
