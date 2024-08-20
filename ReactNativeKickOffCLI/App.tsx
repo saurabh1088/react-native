@@ -8,6 +8,7 @@
 import React from 'react';
 import { Alert, Button, SafeAreaView, Text, View } from 'react-native';
 import WelcomePoster from './components/WelcomePoster';
+import CustomButton from './components/CustomButton';
 
 /*
 For Button, color for iOS is applied to the title, whereas for android it applies to background.
@@ -19,6 +20,10 @@ function App(): React.JSX.Element {
 
   function showAnotherAlert() {
     Alert.alert("Pressed button two")
+  }
+
+  function showAlertForCustomButton() {
+    Alert.alert("Pressed custom button")
   }
 
   return (
@@ -37,6 +42,7 @@ function App(): React.JSX.Element {
             color={'green'}
           />
         </View>
+        <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
       </View>
     </SafeAreaView>
   );
