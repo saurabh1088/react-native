@@ -7,6 +7,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export type WelcomePageNavigationProp = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
 
+/*
+For Button, color for iOS is applied to the title, whereas for android it applies to background.
+*/
 const WelcomePage = ({navigation}: WelcomePageNavigationProp) => {
     return (
       <SafeAreaView>

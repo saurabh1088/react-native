@@ -15,7 +15,9 @@ import HomePage from './screens/HomePage';
 import WelcomePage from './screens/WelcomePage';
 
 /*
-For Button, color for iOS is applied to the title, whereas for android it applies to background.
+This type will be used further to create native stack navigator using createNativeStackNavigator and it is supposed to
+have view part of navigation stack.
+TODO: Explore this more, for a large app do all views need to be added here or one can have multiple stacks also created.
 */
 export type RootStackParamList = {
   Home: undefined;
