@@ -3,11 +3,13 @@ import WelcomePoster from "../components/WelcomePoster"
 import CustomButton from "../components/CustomButton"
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export type WelcomePageNavigationProp = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
 
 const WelcomePage = ({navigation}: WelcomePageNavigationProp) => {
     return (
+      <SafeAreaView>
         <View style={{padding: 16}}>
           <WelcomePoster name='Batman' tagline='Because, I am BATMAN'/>
           <View style={{flexDirection: 'row'}}>
@@ -24,6 +26,7 @@ const WelcomePage = ({navigation}: WelcomePageNavigationProp) => {
           </View>
           <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
         </View>
+      </SafeAreaView>
     )
 }
 

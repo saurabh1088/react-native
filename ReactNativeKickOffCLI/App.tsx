@@ -24,11 +24,15 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+/*
+While creating navigation stack it was observed that if inside NavigationContainer, SafeAreaView is put, then build won't
+show any issues and app will also launch, however app will show blank screen. Once SafeAreaView is removed and placed to
+individual screens which are part of navigation stack then it works fine.
+*/
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <SafeAreaView>
-        <Stack.Navigator>
+      <Stack.Navigator>
           <Stack.Screen
             name='Home'
             component={HomePage}
@@ -38,9 +42,7 @@ function App(): React.JSX.Element {
             component={WelcomePage}
           />
         </Stack.Navigator>
-     </SafeAreaView>
     </NavigationContainer>
-    
   );
 }
 
