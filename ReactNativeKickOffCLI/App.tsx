@@ -9,42 +9,42 @@ import React from 'react';
 import { Alert, Button, SafeAreaView, Text, View } from 'react-native';
 import WelcomePoster from './components/WelcomePoster';
 import CustomButton from './components/CustomButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomePage from './screens/HomePage';
+import WelcomePage from './screens/WelcomePage';
 
 /*
-For Button, color for iOS is applied to the title, whereas for android it applies to background.
+This type will be used further to create native stack navigator using createNativeStackNavigator and it is supposed to
+have view part of navigation stack.
+TODO: Explore this more, for a large app do all views need to be added here or one can have multiple stacks also created.
+*/
+export type RootStackParamList = {
+  Home: undefined;
+  Welcome: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+/*
+While creating navigation stack it was observed that if inside NavigationContainer, SafeAreaView is put, then build won't
+show any issues and app will also launch, however app will show blank screen. Once SafeAreaView is removed and placed to
+individual screens which are part of navigation stack then it works fine.
 */
 function App(): React.JSX.Element {
-  const showAlert = () => {
-    Alert.alert("Pressed button one")
-  }
-
-  function showAnotherAlert() {
-    Alert.alert("Pressed button two")
-  }
-
-  function showAlertForCustomButton() {
-    Alert.alert("Pressed custom button")
-  }
-
   return (
-    <SafeAreaView>
-      <View style={{padding: 16}}>
-        <WelcomePoster name='Batman' tagline='Because, I am BATMAN'/>
-        <View style={{flexDirection: 'row'}}>
-          <Button 
-            onPress={showAlert} 
-            title='Button One'
-            color={'red'}
+    <NavigationContainer>
+      <Stack.Navigator>
+          <Stack.Screen
+            name='Home'
+            component={HomePage}
           />
-          <Button 
-            onPress={showAnotherAlert} 
-            title='Button Two'
-            color={'green'}
+          <Stack.Screen
+            name='Welcome'
+            component={WelcomePage}
           />
-        </View>
-        <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
-      </View>
-    </SafeAreaView>
+        </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
