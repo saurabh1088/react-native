@@ -7,7 +7,8 @@ type ButtonsPageNavigationProp = NativeStackScreenProps<RootStackParamList, 'But
 
 const ButtonsPage = ({navigation}: ButtonsPageNavigationProp) => {
     return (
-        <View style={{flexDirection: 'row'}}>
+        <View>
+            <View style={{flexDirection: 'row'}}>
             <Button 
               onPress={showAlert} 
               title='Button One'
@@ -18,8 +19,10 @@ const ButtonsPage = ({navigation}: ButtonsPageNavigationProp) => {
               title='Button Two'
               color={'green'}
             />
-            <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
           </View>
+          <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
+        </View>
+        
     )
 }
 
