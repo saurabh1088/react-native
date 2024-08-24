@@ -3,7 +3,7 @@ import { RootStackParamList } from "../App"
 import { View, Button, Alert } from "react-native";
 import CustomButton from "../components/CustomButton";
 
-type ButtonsPageNavigationProp = NativeStackScreenProps<RootStackParamList, 'Buttons'>;
+type ButtonsPageNavigationProp = NativeStackScreenProps<RootStackParamList, 'ButtonsPage'>;
 
 const ButtonsPage = ({navigation}: ButtonsPageNavigationProp) => {
     return (

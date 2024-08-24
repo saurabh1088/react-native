@@ -21,9 +21,9 @@ have view part of navigation stack.
 TODO: Explore this more, for a large app do all views need to be added here or one can have multiple stacks also created.
 */
 export type RootStackParamList = {
-  Home: undefined;
-  Welcome: undefined;
-  Buttons: undefined;
+  HomePage: undefined;
+  WelcomePage: undefined;
+  ButtonsPage: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -38,15 +38,15 @@ function App(): React.JSX.Element {
     <NavigationContainer>
       <Stack.Navigator>
           <Stack.Screen
-            name='Home'
+            name='HomePage'
             component={HomePage}
           />
           <Stack.Screen
-            name='Welcome'
+            name='WelcomePage'
             component={WelcomePage}
           />
           <Stack.Screen
-            name='Buttons'
+            name='ButtonsPage'
             component={ButtonsPage}
           />
         </Stack.Navigator>

@@ -3,7 +3,7 @@ import { Button } from "react-native"
 import { RootStackParamList } from "../App";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export type HomeScreenNavigationProp = NativeStackScreenProps<RootStackParamList, 'Home'>;
+export type HomeScreenNavigationProp = NativeStackScreenProps<RootStackParamList, 'HomePage'>;
 
 const HomePage = ({navigation}: HomeScreenNavigationProp) => {
     return (
@@ -11,13 +11,13 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
             <Button
                 title="Welcome"
                 onPress={() =>
-                    navigation.navigate('Welcome')
+                    navigation.navigate('WelcomePage')
                 }
             />
             <Button
                 title="Buttons"
                 onPress={() =>
-                    navigation.navigate('Buttons')
+                    navigation.navigate('ButtonsPage')
                 }
             />
         </SafeAreaView>

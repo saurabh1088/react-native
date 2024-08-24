@@ -4,7 +4,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export type WelcomePageNavigationProp = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
+export type WelcomePageNavigationProp = NativeStackScreenProps<RootStackParamList, 'WelcomePage'>;
 
 /*
 For Button, color for iOS is applied to the title, whereas for android it applies to background.
