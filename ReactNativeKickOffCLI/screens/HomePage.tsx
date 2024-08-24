@@ -14,6 +14,12 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
                     navigation.navigate('Welcome')
                 }
             />
+            <Button
+                title="Buttons"
+                onPress={() =>
+                    navigation.navigate('Buttons')
+                }
+            />
         </SafeAreaView>
     )
 }

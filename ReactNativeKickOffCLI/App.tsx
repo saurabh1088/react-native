@@ -13,6 +13,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from './screens/HomePage';
 import WelcomePage from './screens/WelcomePage';
+import ButtonsPage from './screens/ButtonsPage';
 
 /*
 This type will be used further to create native stack navigator using createNativeStackNavigator and it is supposed to
@@ -22,6 +23,7 @@ TODO: Explore this more, for a large app do all views need to be added here or o
 export type RootStackParamList = {
   Home: undefined;
   Welcome: undefined;
+  Buttons: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -42,6 +44,10 @@ function App(): React.JSX.Element {
           <Stack.Screen
             name='Welcome'
             component={WelcomePage}
+          />
+          <Stack.Screen
+            name='Buttons'
+            component={ButtonsPage}
           />
         </Stack.Navigator>
     </NavigationContainer>
