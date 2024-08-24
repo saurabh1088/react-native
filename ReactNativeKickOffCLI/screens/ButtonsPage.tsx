@@ -1,13 +1,14 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { RootStackParamList } from "../App"
-import { View, Button, Alert } from "react-native";
+import { View, Button, Alert, SafeAreaView } from "react-native";
 import CustomButton from "../components/CustomButton";
 
 type ButtonsPageNavigationProp = NativeStackScreenProps<RootStackParamList, 'ButtonsPage'>;
 
 const ButtonsPage = ({navigation}: ButtonsPageNavigationProp) => {
     return (
-        <View>
+        <SafeAreaView>
+          <View style={{padding: 16}}>
             <View style={{flexDirection: 'row'}}>
             <Button 
               onPress={showAlert} 
@@ -22,7 +23,7 @@ const ButtonsPage = ({navigation}: ButtonsPageNavigationProp) => {
           </View>
           <CustomButton title='Custom Button' onPress={showAlertForCustomButton}/>
         </View>
-        
+        </SafeAreaView>
     )
 }
 
