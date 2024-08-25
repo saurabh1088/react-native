@@ -20,6 +20,12 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
                     navigation.navigate('ButtonsPage')
                 }
             />
+            <Button
+                title="Flex"
+                onPress={() =>
+                    navigation.navigate('FlexPage')
+                }
+            />
         </SafeAreaView>
     )
 }
