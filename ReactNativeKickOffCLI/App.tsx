@@ -14,6 +14,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from './screens/HomePage';
 import WelcomePage from './screens/WelcomePage';
 import ButtonsPage from './screens/ButtonsPage';
+import FlexPage from './screens/FlexPage';
 
 /*
 This type will be used further to create native stack navigator using createNativeStackNavigator and it is supposed to
@@ -24,6 +25,7 @@ export type RootStackParamList = {
   HomePage: undefined;
   WelcomePage: undefined;
   ButtonsPage: undefined;
+  FlexPage: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -48,6 +50,10 @@ function App(): React.JSX.Element {
           <Stack.Screen
             name='ButtonsPage'
             component={ButtonsPage}
+          />
+          <Stack.Screen
+            name='FlexPage'
+            component={FlexPage}
           />
         </Stack.Navigator>
     </NavigationContainer>
