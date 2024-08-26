@@ -83,6 +83,15 @@ const FlexPage = ({navigation}: FlexPageNavigationProp) => {
                         <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
                         <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
                     </View>
+
+                    {/* justifyContent set to space-evenly
+                    */}
+                    <Text>Flex with justifyContent space-evenly</Text>
+                    <View style={{justifyContent: 'space-evenly', width: 100, height: 300, backgroundColor: 'yellow'}}>
+                        <View style={{width: 50, height: 50, backgroundColor: 'red'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </View>
