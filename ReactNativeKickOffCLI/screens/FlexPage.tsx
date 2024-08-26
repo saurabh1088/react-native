@@ -47,6 +47,15 @@ const FlexPage = ({navigation}: FlexPageNavigationProp) => {
                         <View style={{flex: 2, backgroundColor: 'blue'}}></View>
                         <View style={{flex: 4, backgroundColor: 'green'}}></View>
                     </View>
+
+                    {/* justifyContent
+                    */}
+                    <Text>Flex with justifyContent flex-end</Text>
+                    <View style={{justifyContent: 'flex-end', width: 100, height: 300, backgroundColor: 'yellow'}}>
+                        <View style={{width: 50, height: 50, backgroundColor: 'red'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </View>
