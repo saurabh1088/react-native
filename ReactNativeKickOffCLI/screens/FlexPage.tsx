@@ -92,6 +92,24 @@ const FlexPage = ({navigation}: FlexPageNavigationProp) => {
                         <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
                         <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
                     </View>
+
+                    {/* Flex direction set to default i.e. LTR
+                    */}
+                    <Text>Flex with default direction i.e. ltr</Text>
+                    <View style={{width: 300, height: 150, backgroundColor: 'yellow'}}>
+                        <View style={{width: 50, height: 50, backgroundColor: 'red'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
+                    </View>
+
+                    {/* Flex direction set to RTL
+                    */}
+                    <Text>Flex with rtl direction</Text>
+                    <View style={{direction: 'rtl', width: 300, height: 150, backgroundColor: 'yellow'}}>
+                        <View style={{width: 50, height: 50, backgroundColor: 'red'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
+                        <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </View>
