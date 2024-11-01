@@ -53,7 +53,7 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
                 }}
             />
             {isLoading ? (
-                <ActivityIndicator></ActivityIndicator>
+                <ActivityIndicator size="large" color="#00ff00" />
             ) : (
                 <Text>{apiResultValue}</Text>
             )
