@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
-import { Button, Modal, Text, View } from "react-native"
+import { ActivityIndicator, Button, Modal, Text, View } from "react-native"
 import { RootStackParamList } from "../App";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
@@ -9,6 +9,7 @@ export type HomeScreenNavigationProp = NativeStackScreenProps<RootStackParamList
 const HomePage = ({navigation}: HomeScreenNavigationProp) => {
     const [showModalView, setShowModalView] = useState(false)
     const [apiResultValue, setApiResultValue] = useState('Tap [Call API] to update me')
+    const [isLoading, setIsLoading] = useState(false)
     return (
         <SafeAreaView>
             <Button
@@ -38,6 +39,7 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
             <Button
                 title="Call API"
                 onPress={async () => {
+                    setIsLoading(true)
                     try {
                         const response = await fetch('https://catfact.ninja/fact');
                         const json = await response.json();
@@ -45,10 +47,17 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
                         setApiResultValue(json.fact);
                     } catch (error) {
                         console.error(error);
+                    } finally {
+                        setIsLoading(false)
                     }
                 }}
             />
-            <Text>{apiResultValue}</Text>
+            {isLoading ? (
+                <ActivityIndicator></ActivityIndicator>
+            ) : (
+                <Text>{apiResultValue}</Text>
+            )
+            }
             <Modal animationType="slide" visible={showModalView}>
                 <View style={{flex: 1, justifyContent: 'center'}}>
                     <Text>This is a modal view</Text>
