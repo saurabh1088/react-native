@@ -8,6 +8,7 @@ export type HomeScreenNavigationProp = NativeStackScreenProps<RootStackParamList
 
 const HomePage = ({navigation}: HomeScreenNavigationProp) => {
     const [showModalView, setShowModalView] = useState(false)
+    const [apiResultValue, setApiResultValue] = useState('Tap [Call API] to update me')
     return (
         <SafeAreaView>
             <Button
@@ -34,6 +35,23 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
                     setShowModalView(true)
                 }
             />
+            <Button
+                title="Call API"
+                onPress={() => {
+                    fetch('https://catfact.ninja/fact')
+                        .then(response => response.json())
+                        .then(json => {
+                            console.log('Received response')
+                            setApiResultValue(json.fact)
+                            return json.fact;
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+                    }
+                }
+            />
+            <Text>{apiResultValue}</Text>
             <Modal animationType="slide" visible={showModalView}>
                 <View style={{flex: 1, justifyContent: 'center'}}>
                     <Text>This is a modal view</Text>
