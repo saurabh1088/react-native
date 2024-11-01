@@ -37,19 +37,16 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
             />
             <Button
                 title="Call API"
-                onPress={() => {
-                    fetch('https://catfact.ninja/fact')
-                        .then(response => response.json())
-                        .then(json => {
-                            console.log('Received response')
-                            setApiResultValue(json.fact)
-                            return json.fact;
-                        })
-                        .catch(error => {
-                            console.error(error);
-                        });
+                onPress={async () => {
+                    try {
+                        const response = await fetch('https://catfact.ninja/fact');
+                        const json = await response.json();
+                        console.log('Received response');
+                        setApiResultValue(json.fact);
+                    } catch (error) {
+                        console.error(error);
                     }
-                }
+                }}
             />
             <Text>{apiResultValue}</Text>
             <Modal animationType="slide" visible={showModalView}>
