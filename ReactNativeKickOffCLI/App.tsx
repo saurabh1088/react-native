@@ -60,4 +60,13 @@ function App(): React.JSX.Element {
   );
 }
 
+/*
+export
+
+export here is a declaration which is used to export values from a JavaScript module/file. Exported values then can be
+imported from other modules/files by using import declaration. One can export functions, objects or components and use
+by importing at other place.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+*/
 export default App;

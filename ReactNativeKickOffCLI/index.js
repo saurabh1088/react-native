@@ -11,7 +11,9 @@ import {name as appName} from './app.json';
 
 /*
 Below code, is very important piece of React Native app's startup process. It is telling React Native which component to
-render as the main entry point of the app. For example here we are registering component named App under name appName.
+render as the main entry point of the app. For example here we are registering component named App under key appName which
+is mapped to a string value in app.json file. This ensures component App will be rendered as the entry point of the
+application on both iOS and Android.
 
 AppRegistry
 AppRegistry is a module in React Native and it is responsible for managing the lifecycle of root component. AppRegistry
