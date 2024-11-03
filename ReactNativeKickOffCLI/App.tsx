@@ -28,6 +28,13 @@ export type RootStackParamList = {
   FlexPage: undefined;
 };
 
+/*
+Here we are creating a stack navigator using popular library @react-navigation/native-stack. Function createNativeStackNavigator
+from library @react-navigation/native-stack creates a stack navigator. Stack navigator organises screens in a stack such
+that it allows user to navigate back to previous screens and maintain a navigation history for user interaction.
+RootStackParamList is a TypeScript type defining each screen name on stack and type of parameters expected by each screen
+on the stack.
+*/
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 /*
