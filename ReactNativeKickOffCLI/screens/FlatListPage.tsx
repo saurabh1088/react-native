@@ -1,18 +1,42 @@
-import { View, Button, Alert, Text } from "react-native"
+import { View, Button, Alert, Text, FlatList } from "react-native"
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export type FlatListPageNavigationProp = NativeStackScreenProps<RootStackParamList, 'FlatListPage'>;
 
-/*
-For Button, color for iOS is applied to the title, whereas for android it applies to background.
-*/
+type DCHero = {
+    id: string;
+    name: string;
+    powers: string;
+}
+
 const FlatListPage = ({navigation}: FlatListPageNavigationProp) => {
+
+    // Sample data for Flat List
+    const justiceLeague: DCHero[] = [
+        { id: '1', name: 'Batman', powers: 'Rich and greatest detective' },
+        { id: '2', name: 'Superman', powers: 'Fly, strongest and laser eyes' },
+        { id: '3', name: 'Wonder Woman', powers: 'Lasso, power bracelets and immortal' },
+        { id: '4', name: 'Flash', powers: 'Super fast' },
+    ];
+
+    const renderSuperHero = ({ item }: { item: DCHero }) => (
+        <View>
+            <Text>{item.name}</Text>
+            <Text>{item.powers}</Text>
+        </View>
+    );
+
     return (
       <SafeAreaView>
         <View style={{padding: 16}}>
             <Text>Example for FlatList</Text>
+            <FlatList
+                data={justiceLeague}
+                keyExtractor={(hero) => hero.id}
+                renderItem={renderSuperHero}
+            />
         </View>
       </SafeAreaView>
     )
