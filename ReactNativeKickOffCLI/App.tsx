@@ -28,6 +28,13 @@ export type RootStackParamList = {
   FlexPage: undefined;
 };
 
+/*
+Here we are creating a stack navigator using popular library @react-navigation/native-stack. Function createNativeStackNavigator
+from library @react-navigation/native-stack creates a stack navigator. Stack navigator organises screens in a stack such
+that it allows user to navigate back to previous screens and maintain a navigation history for user interaction.
+RootStackParamList is a TypeScript type defining each screen name on stack and type of parameters expected by each screen
+on the stack.
+*/
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 /*
@@ -60,4 +67,13 @@ function App(): React.JSX.Element {
   );
 }
 
+/*
+export
+
+export here is a declaration which is used to export values from a JavaScript module/file. Exported values then can be
+imported from other modules/files by using import declaration. One can export functions, objects or components and use
+by importing at other place.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+*/
 export default App;
