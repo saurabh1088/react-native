@@ -1,4 +1,4 @@
-import { View, Button, Alert, Text, FlatList } from "react-native"
+import { View, Button, Alert, Text, FlatList, StyleSheet } from "react-native"
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -28,16 +28,16 @@ const FlatListPage = ({navigation}: FlatListPageNavigationProp) => {
     ];
 
     const renderSuperHero = ({ item }: { item: DCHero }) => (
-        <View>
-            <Text>{item.name}</Text>
-            <Text>{item.powers}</Text>
+        <View style={styles.superHeroDetailsContainer}>
+            <Text style={styles.superHeroName}>{item.name}</Text>
+            <Text style={styles.superHeroPowers}>{item.powers}</Text>
         </View>
     );
 
     return (
       <SafeAreaView>
         <View style={{padding: 16}}>
-            <Text>Example for FlatList</Text>
+            <Text style={styles.flatListHeader}>Example for FlatList</Text>
             <FlatList
                 data={justiceLeague}
                 keyExtractor={(hero) => hero.id}
@@ -47,5 +47,27 @@ const FlatListPage = ({navigation}: FlatListPageNavigationProp) => {
       </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+    superHeroDetailsContainer: {
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+    },
+    superHeroName: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    superHeroPowers: {
+        fontSize: 14,
+        color: '#666',
+        marginTop: 4,
+    },
+    flatListHeader: {
+        fontSize: 32,
+        fontWeight: 'bold'
+    }
+});
 
 export default FlatListPage;
