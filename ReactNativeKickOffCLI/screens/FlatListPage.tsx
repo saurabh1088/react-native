@@ -2,6 +2,7 @@ import { View, Button, Alert, Text, FlatList, StyleSheet } from "react-native"
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { SafeAreaView } from "react-native-safe-area-context";
+import ImageLabelDetailCell from "../components/ImageLabelDetailCell";
 
 export type FlatListPageNavigationProp = NativeStackScreenProps<RootStackParamList, 'FlatListPage'>;
 
@@ -28,10 +29,11 @@ const FlatListPage = ({navigation}: FlatListPageNavigationProp) => {
     ];
 
     const renderSuperHero = ({ item }: { item: DCHero }) => (
-        <View style={styles.superHeroDetailsContainer}>
-            <Text style={styles.superHeroName}>{item.name}</Text>
-            <Text style={styles.superHeroPowers}>{item.powers}</Text>
-        </View>
+        <ImageLabelDetailCell
+            label={item.name}
+            detail={item.powers}
+            imageName=""
+        />
     );
 
     return (
@@ -49,21 +51,6 @@ const FlatListPage = ({navigation}: FlatListPageNavigationProp) => {
 }
 
 const styles = StyleSheet.create({
-    superHeroDetailsContainer: {
-        padding: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ddd',
-    },
-    superHeroName: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#333',
-    },
-    superHeroPowers: {
-        fontSize: 14,
-        color: '#666',
-        marginTop: 4,
-    },
     flatListHeader: {
         fontSize: 32,
         fontWeight: 'bold'
