@@ -52,6 +52,12 @@ const HomePage = ({navigation}: HomeScreenNavigationProp) => {
                     }
                 }}
             />
+            <Button
+                title="Flat List"
+                onPress={() =>
+                    navigation.navigate('FlatListPage')
+                }
+            />
             {isLoading ? (
                 <ActivityIndicator size="large" color="#00ff00" />
             ) : (
