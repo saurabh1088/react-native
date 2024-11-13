@@ -9,6 +9,7 @@ type ImageLabelDetailCellProps = PropsWithChildren<{
     imageName: string
 }>;
 
+// This mapping here is necessary as require doesn't takes arguments hence can't be buit dynamically
 export const images: { [key: string]: any } = {
     aquaman: require('../assets/images/dc_aquaman.jpeg'),
     batman: require('../assets/images/dc_batman.jpeg'),
